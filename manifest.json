@@ -1,21 +1,21 @@
 {
-  "name": "TOPIC APP",
-  "short_name": "TOPIC APP",
-  "description": "TOPIC APP",
-  "start_url": "./index.html?v=v1782176129195",
+  "name": "Topic App",
+  "short_name": "Topic App",
+  "description": "Topic App",
+  "start_url": "./index.html?v=v1782245581172",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
-  "theme_color": "#aa78ba",
+  "theme_color": "#ff00ff",
   "icons": [
     {
-      "src": "./icon-192.png?v=v1782176129195",
+      "src": "./icon-192.png?v=v1782245581172",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icon-512.png?v=v1782176129195",
+      "src": "./icon-512.png?v=v1782245581172",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
