@@ -81,13 +81,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="manifest" href="./manifest.json?v=v1782283700824">
-    <meta name="theme-color" content="#535696">
-    <link rel="apple-touch-icon" href="./icon-192.png?v=v1782283700824">
+    <link rel="manifest" href="./manifest.json?v=v1782285708815">
+    <meta name="theme-color" content="#605999">
+    <link rel="apple-touch-icon" href="./icon-192.png?v=v1782285708815">
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=v1782283700824')
+          navigator.serviceWorker.register('./sw.js?v=v1782285708815')
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Failed', err));
         });
@@ -108,7 +108,7 @@
             <h4 style="color: var(--text-main); margin-bottom: 10px;">إضافة قسم جديد</h4>
             <input type="text" id="newCatName" placeholder="اسم القسم الجديد" style="width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); font-size: 1.1rem; outline: none;">
             <input type="password" id="newCatPassword" placeholder="كلمة مرور للقسم (اختياري)" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); font-size: 1.1rem; outline: none;">
-            <textarea id="newCatQuestions" placeholder='اكتب الأسئلة هنا (اضغط Enter أو استخدم صيغة "سؤال1", "سؤال2")' style="width: 100%; height: 80px; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); resize: vertical; font-size: 1.1rem; outline: none;"></textarea>
+            <textarea id="newCatQuestions" placeholder='اكتب الأسئلة هنا (سطر بسطر أو بصيغة "سؤال1", "سؤال2")' style="width: 100%; height: 80px; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); resize: vertical; font-size: 1.1rem; outline: none;"></textarea>
             <button onclick="saveNewCategory()" style="background: var(--btn-copy); padding: 10px 20px; font-size: 1rem; width: 100%; margin-bottom: 20px; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;"><i class="fas fa-cloud-upload-alt"></i> رفع قسم جديد للسيرفر</button>
 
             <hr style="border: 1px dashed var(--text-muted); margin: 20px 0; opacity: 0.5;">
@@ -126,7 +126,7 @@
             <select id="appendCatSelect" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); font-size: 1.1rem; outline: none;">
                 <option value="">اختر قسم السيرفر للإضافة إليه...</option>
             </select>
-            <textarea id="appendCatQuestions" placeholder='اكتب الأسئلة الإضافية هنا (اضغط Enter أو استخدم صيغة "سؤال1", "سؤال2")' style="width: 100%; height: 80px; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); resize: vertical; font-size: 1.1rem; outline: none;"></textarea>
+            <textarea id="appendCatQuestions" placeholder='اكتب الأسئلة الإضافية هنا (سطر بسطر أو بصيغة "سؤال1", "سؤال2")' style="width: 100%; height: 80px; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); resize: vertical; font-size: 1.1rem; outline: none;"></textarea>
             <button onclick="appendQuestionsToCategory()" style="background: var(--accent-glow); padding: 10px 20px; font-size: 1rem; width: 100%; margin-bottom: 20px; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;"><i class="fas fa-plus-circle"></i> دمج الأسئلة للقسم المحدد</button>
 
             <hr style="border: 1px dashed var(--text-muted); margin: 20px 0; opacity: 0.5;">
@@ -160,11 +160,12 @@
 
             <hr style="border: 1px dashed var(--text-muted); margin: 20px 0; opacity: 0.5;">
             
+            <!-- قائمة اختيار السيرفر الحصرية والمستقرة -->
             <h4 style="color: #38bdf8; margin-bottom: 10px; font-size: 1.2rem;">إعدادات السيرفر النشط (Firebase) 🔗</h4>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">اختر السيرفر الذي ترغب في ربط أقسام الموقع عليه:</p>
             <select id="fb_server_select" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--text-muted); background: var(--bg-color); color: var(--text-main); font-size: 1.1rem; outline: none; font-weight: bold; cursor: pointer;">
-                <option value="server1">السيرفر الأول (myyppproject)</option>
-                <option value="server2">السيرفر الثاني (spygame-337ee)</option>
+                <option value="server1">السيرفر الأول والأساسي (spygame-337ee)</option>
+                <option value="server2">السيرفر الثاني الاحتياطي (myyppproject)</option>
             </select>
             <button onclick="saveFirebaseConfig()" style="background: #2563eb; padding: 10px 20px; font-size: 1rem; width: 100%; margin-bottom: 20px; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;"><i class="fas fa-server"></i> حفظ وتأكيد السيرفر الحالي</button>
 
@@ -191,25 +192,27 @@
         <div class="modal-content">
             <h3 style="color: var(--accent-glow); margin-bottom: 15px;">سجل آخر 10 أسئلة 🕒</h3>
             <div id="historyList" style="text-align: right; margin: 15px 0; max-height: 300px; overflow-y: auto; color: var(--text-main); font-size: 1.1rem; line-height: 1.6; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px;"></div>
-            <button onclick="document.getElementById('historyModal').style.display='none'" style="background: #e11d48; padding: 12px; font-size: 1.1rem; width: 100%; border-radius: 8px; color: white; border: none; cursor: pointer;">إغلاق</button>
+            <button onclick="document.getElementById('historyModal').style.display='none'" style="background: #e11d48; padding: 12px; font-size: 1.1rem; width: 100%; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;">إغلاق</button>
         </div>
     </div>
 
     <script>
+        // المتغيرات العالمية
         if(typeof window.allPools === "undefined") window.allPools = {};
         if(typeof window.memory === "undefined") window.memory = {};
         if(typeof window.globalMemory === "undefined") window.globalMemory = [];
         if(typeof window.customSelectedCategories === "undefined") window.customSelectedCategories = [];
         if(typeof window.authenticatedCats === "undefined") window.authenticatedCats = [];
 
+        // دالة حفظ خيار السيرفر المختار للمزامنة الدائمة
         window.saveFirebaseConfig = function() {
             const select = document.getElementById('fb_server_select');
             localStorage.setItem('selectedFirebaseServer', select.value);
-            alert("تم تثبيت السيرفر النشط بنجاح! سيتم إعادة تحميل الموقع لتطبيق التغيير.");
+            alert("تم تثبيت السيرفر النشط بنجاح! سيتم إعادة تحميل الموقع.");
             location.reload();
         };
 
-        // الذاكرة لمنع التكرار الصارم لمدة يومين كاملين (48 ساعة = 172800000 ملي ثانية)
+        // الذاكرة ومنع التكرار لمدة يومين كاملين (48 ساعة = 172800000 ملي ثانية)
         window.questionCooldowns = JSON.parse(localStorage.getItem("qCooldowns")) || {};
         window.last10Questions = JSON.parse(localStorage.getItem("last10Q")) || [];
 
@@ -226,6 +229,7 @@
 
         window.markQuestionUsed = function(q) {
             window.questionCooldowns[q] = Date.now();
+            
             window.last10Questions = window.last10Questions.filter(item => item !== q);
             window.last10Questions.unshift(q);
             if(window.last10Questions.length > 10) window.last10Questions.pop();
@@ -253,7 +257,7 @@
             document.getElementById('historyModal').style.display = 'flex';
         }
 
-        // الدالة الذكية والمحصنة لفك كافة صيغ الإدخال (سطور أو علامات تنصيص وفواصل)
+        // الخوارزمية الذكية القوية لفرز الأسئلة المعقدة
         window.parseInputQuestions = function(text) {
             if(!text) return [];
             let t = String(text).trim();
@@ -272,7 +276,7 @@
             return parsed;
         };
 
-        // كود قراءة النص بالصوت (TTS) باللغة العربية
+        // كود القراءة بالصوت العربي الإجباري (TTS)
         let useFemaleVoice = false; 
         if ('speechSynthesis' in window) {
             window.speechSynthesis.onvoiceschanged = function() {
@@ -358,6 +362,7 @@
             <div class="question-text" id="questionText" style="color: var(--text-muted); opacity: 0.7; font-size: 1.4rem;">
                 دوس على "سؤال جديد" عشان تبدأ...
             </div>
+            <!-- البادج لمعرفة القسم المصدر -->
             <div id="questionSourceBadge"></div>
             <i class="fas fa-quote-right quote-icon quote-left"></i>
         </div>
@@ -420,6 +425,7 @@
         
         let currentCategory = "midnight"; 
         let previousCategory = "midnight";
+        let currentQuestion = "";
         let draggedItem = null;
 
         function changeTheme(themeName) {
@@ -857,23 +863,34 @@
             });
         }
 
+        // دالة حفظ الترتيب واستدعاء المزامنة السحابية
         window.saveOrder = function() {
             const items = document.querySelectorAll('.sortable-item');
             const newOrder = Array.from(items).map(item => item.dataset.key);
             localStorage.setItem("catOrder", JSON.stringify(newOrder));
             buildDropdowns();
-            alert("تم حفظ الترتيب بنجاح!");
+            if(window.syncOrderToFirebase) {
+                window.syncOrderToFirebase(newOrder);
+            }
+            alert("تم حفظ الترتيب بنجاح على جميع الأجهزة!");
         }
     </script>
 
-    <!-- Firebase SDK - مكتبة واحدة فقط مدمج بها السيرفرين برمجياً وجاهزة للـ GitHub -->
+    <!-- Firebase SDK - مكتبة واحدة فقط مدمج بها السيرفرين مع المزامنة السحابية للترتيب -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, set, push, get, child, remove, update } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // قواعد البيانات والمفاتيح الخاصة بكلا السيرفرين
+        // تبديل السيرفر الأول والأساسي ليصبح spygame والسيرفر الثاني myyppproject
         const firebaseConfigsPool = {
             server1: {
+                apiKey: "AIzaSyBtIkF-UhkeFa-cxutgJAQpR7K_IjKxloc",
+                authDomain: "spygame-337ee.firebaseapp.com",
+                databaseURL: "https://spygame-337ee-default-rtdb.firebaseio.com", 
+                projectId: "spygame-337ee",
+                storageBucket: "spygame-337ee.firebasestorage.app"
+            },
+            server2: {
                 apiKey: "AIzaSyCA8tjD2nzixDARhXApDLZrtDBIqJY_0I0",
                 authDomain: "myyppproject.firebaseapp.com",
                 databaseURL: "https://myyppproject-default-rtdb.firebaseio.com",
@@ -882,23 +899,24 @@
                 messagingSenderId: "679811302650",
                 appId: "1:679811302650:web:23da36e87af1845194b543",
                 measurementId: "G-8X5ET6BQFY"
-            },
-            server2: {
-                apiKey: "AIzaSyBtIkF-UhkeFa-cxutgJAQpR7K_IjKxloc",
-                authDomain: "spygame-337ee.firebaseapp.com",
-                databaseURL: "https://spygame-337ee-default-rtdb.firebaseio.com", 
-                projectId: "spygame-337ee",
-                storageBucket: "spygame-337ee.firebasestorage.app"
             }
         };
 
-        // استدعاء السيرفر النشط، والافتراضي هو الأول
         let activeServerKey = localStorage.getItem('selectedFirebaseServer') || 'server1';
         const targetConfig = firebaseConfigsPool[activeServerKey] || firebaseConfigsPool['server1'];
 
         const app = initializeApp(targetConfig);
         const db = getDatabase(app);
         
+        // مزامنة الترتيب السحابية
+        window.syncOrderToFirebase = async function(orderArr) {
+            try {
+                await set(ref(db, 'global_settings/catOrder'), orderArr);
+            } catch(e) {
+                console.error("Failed to sync order", e);
+            }
+        };
+
         window.saveNewCategory = async function() {
             const name = document.getElementById('newCatName').value.trim();
             const text = document.getElementById('newCatQuestions').value;
@@ -1151,6 +1169,18 @@
                 if(typeof window.memory === "undefined") window.memory = {};
 
                 const dbRef = ref(db);
+                
+                // جلب ترتيب الأقسام السحابي أولاً
+                try {
+                    const orderSnap = await get(child(dbRef, 'global_settings/catOrder'));
+                    if (orderSnap.exists()) {
+                        const serverOrder = orderSnap.val();
+                        if(Array.isArray(serverOrder)) {
+                            localStorage.setItem("catOrder", JSON.stringify(serverOrder));
+                        }
+                    }
+                } catch(e) {}
+
                 const snapshot = await get(child(dbRef, `custom_categories`));
                 if (snapshot.exists()) {
                     const data = snapshot.val();

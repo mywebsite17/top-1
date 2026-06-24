@@ -1,21 +1,21 @@
 {
-  "name": "Topics App",
-  "short_name": "Topics App",
-  "description": "Topics App",
-  "start_url": "./index.html?v=v1782283700824",
+  "name": "My PWA App",
+  "short_name": "PWA App",
+  "description": "",
+  "start_url": "./index.html?v=v1782285708815",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
-  "theme_color": "#535696",
+  "theme_color": "#605999",
   "icons": [
     {
-      "src": "./icon-192.png?v=v1782283700824",
+      "src": "./icon-192.png?v=v1782285708815",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icon-512.png?v=v1782283700824",
+      "src": "./icon-512.png?v=v1782285708815",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
